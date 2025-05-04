@@ -32,6 +32,6 @@ stages:
         dockerfile: 'service-register/Dockerfile'     # ✅ correct relative path
         buildContext: 'eureka-server'
         # dockerfile: '**/Dockerfile'
-        repository: 
+        repository: $(imageName)
         tags: |
           $(tag)
