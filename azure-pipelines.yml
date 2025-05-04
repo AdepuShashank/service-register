@@ -22,18 +22,14 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - checkout: self
-    - script: |
-          echo "==== START: Listing Files ===="
-          find . -type f
-          echo "==== END: Listing Files ===="
-          displayName: List all files in repo
+    - script:
           echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
       displayName: Docker Hub Login
     - task: Docker@2
       displayName: Build and Push Docker image
       inputs:
         command: buildAndPush
-        dockerfile: 'service-register/Dockerfile'     # ✅ correct relative path
+        dockerfile: 'Dockerfile'     # ✅ correct relative path
         buildContext: 'eureka-server'
         # dockerfile: '**/Dockerfile'
         repository: $(imageName)
