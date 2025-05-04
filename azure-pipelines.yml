@@ -23,7 +23,7 @@ stages:
     steps:
     - checkout: self
     - script: |
-        echo "Shashi@Dock8977" | docker login -u "shashankadepu" --password-stdin
+        echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
       displayName: Docker Hub Login
     - task: Docker@2
       displayName: Build and Push Docker image
