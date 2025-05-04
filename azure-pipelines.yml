@@ -29,7 +29,7 @@ stages:
       displayName: Build and Push Docker image
       inputs:
         command: buildAndPush
-        dockerfile: 'Service-Register/Dockerfile'     # ✅ correct relative path
+        dockerfile: 'service-register/Dockerfile'     # ✅ correct relative path
         buildContext: 'eureka-server'
         # dockerfile: '**/Dockerfile'
         repository: 
