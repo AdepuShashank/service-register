@@ -30,7 +30,7 @@ stages:
       inputs:
         command: buildAndPush
         dockerfile: 'Dockerfile'     # ✅ correct relative path
-        buildContext: '-'
+        buildContext: '.'
         # dockerfile: '**/Dockerfile'
         repository: $(imageName)
         tags: |
