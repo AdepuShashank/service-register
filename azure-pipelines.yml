@@ -29,7 +29,9 @@ stages:
       displayName: Build and Push Docker image
       inputs:
         command: buildAndPush
-        dockerfile: '**/Dockerfile'
+        dockerfile: 'eureka-server/Dockerfile'     # ✅ correct relative path
+        buildContext: 'eureka-server'
+        # dockerfile: '**/Dockerfile'
         repository: 
         tags: |
           $(tag)
