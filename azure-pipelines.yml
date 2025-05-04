@@ -14,7 +14,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build and Push Docker image
+  displayName: Build and Push Docker image 
   jobs:
   - job: BuildAndPush
     displayName: Build and Push
